@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакти</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Контакти</h1>
+    <nav>
+        <a href="home.html">Головна</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="product.html">Товар</a>
+        <a href="contacts.html">Контакти</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Зв'яжіться з нами</h2>
+    <p>Телефон: +380 12 345 6789</p>
+    <p>Email: info@exoticanimals.ua</p>
+    <p>Адреса: м. Київ, вул. Екзотична, 1</p>
+
+    <h3>Форма зворотного зв’язку</h3>
+    <form action="#" method="post" id="contactForm">
+        <label for="name">Ім’я:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Повідомлення:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+        <button type="submit">Надіслати</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2025 Екзотичні Тварини</p>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const message = this.message.value.trim();
+
+    if (!name || !email || !message) {
+        alert('Будь ласка, заповніть всі поля.');
+        return;
+    }
+
+    alert(`Дякуємо, ${name}! Ваше повідомлення надіслано.`);
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
